@@ -1,5 +1,5 @@
 # ModelRoyale 🏆
-### *Head to head LLM Evaluation App.*
+### *LLM Thunderdome — Two models enter. One response wins.*
 
 ![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat&logo=python&logoColor=white)
 ![Gradio](https://img.shields.io/badge/Gradio-4.x-FF7C00?style=flat&logo=gradio&logoColor=white)
@@ -32,10 +32,10 @@ Built as a personal portfolio project to explore multi-provider inference, async
 
 | Provider | Models |
 |---|---|
-| Anthropic | Claude 3.5 Haiku, Claude 3.5 Sonnet, Claude 3 Opus |
-| OpenAI | GPT-4o Mini, GPT-4o, GPT-4 Turbo |
-| OpenRouter | Gemini Flash 2.0, Llama 3.3 70B, Mistral Large, DeepSeek R1, Grok 2 |
-| Ollama | Any locally running model (fetched dynamically) |
+| Anthropic | Claude Sonnet 4.6, Claude Opus 4.6, Claude Haiku 4.5, Claude Sonnet 4.5 |
+| OpenAI | GPT-4o Mini, GPT-4o, GPT-5.2 |
+| OpenRouter | Gemini 2.5 Flash, Llama 3.3 70B, Mistral Medium 3, DeepSeek R1, Grok 2 |
+| Ollama | GPT-OSS 20B, Gemma3 27B, Gemma3 270M, Llama 3.1 8B, Llama 3.2, Llama 3.2 Vision |
 
 ---
 
@@ -112,9 +112,10 @@ Copy `.env.example` to `.env` and populate:
 ANTHROPIC_API_KEY=your_key_here
 OPENAI_API_KEY=your_key_here
 OPENROUTER_API_KEY=your_key_here
+OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
 OLLAMA_BASE_URL=http://localhost:11434
 JUDGE_PROVIDER=anthropic
-JUDGE_MODEL=claude-3-5-haiku-20241022
+JUDGE_MODEL=claude-haiku-4-5-20251001
 MAX_TOKENS=2048
 ```
 
@@ -139,7 +140,10 @@ Navigate to `http://localhost:7860` in your browser.
 - [x] Project scaffold + config
 - [x] ModelResponse data contract
 - [x] Abstract base provider
-- [ ] Provider implementations (Anthropic, OpenAI, OpenRouter, Ollama)
+- [x] Anthropic provider
+- [ ] OpenAI provider
+- [ ] OpenRouter provider
+- [ ] Ollama provider
 - [ ] Inference engine
 - [ ] LLM-as-judge
 - [ ] Gradio UI
